@@ -8,21 +8,21 @@ $matches = [
     ],
     [
         'teamHome' => 'Oklahoma City Thunder',
-        'scoreHome' => '45',
+        'scoreHome' => '62',
         'teamAway' => 'New York Knicks',
-        'scoreAway' => '70',
+        'scoreAway' => '21',
     ],
     [
         'teamHome' => 'Indiana Pacers',
-        'scoreHome' => '45',
+        'scoreHome' => '12',
         'teamAway' => 'Utah Jazz',
-        'scoreAway' => '70',
+        'scoreAway' => '64',
     ],
     [
         'teamHome' => 'Miami Heat',
-        'scoreHome' => '45',
+        'scoreHome' => '55',
         'teamAway' => 'Phoenix Suns',
-        'scoreAway' => '70',
+        'scoreAway' => '87',
     ]
 ];
 ?>
@@ -40,7 +40,14 @@ $matches = [
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="app">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center">
+        <?php
+            foreach($matches as $games){
+                echo "<h5> {$games['teamHome']} - {$games['teamAway']} </h5>";
+                echo "<h5> {$games['scoreHome']} {$games['scoreAway']}</h5>";
+            } ?>
+        </div>
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
