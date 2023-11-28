@@ -27,6 +27,14 @@ $matches = [
 ];
 ?>
 
+<?php 
+if (isset($_GET['name']) && isset($_GET['age']) && isset($_GET['email'])) {
+$name = $_GET['name'];
+$age = $_GET['age'];
+$email = $_GET['email'];
+};
+?>
+
 
 
 <!DOCTYPE html>
@@ -48,6 +56,24 @@ $matches = [
                 echo "<h5> {$games['scoreHome']} {$games['scoreAway']}</h5>";
             } ?>
         </div>
+
+        <div class="text-center m-5">
+            <form action="index.php" method="GET">
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="age" placeholder="Age">
+                <input type="text" name="email" placeholder="Email">
+                <button>Invia</button>
+            </form>
+        </div>
+        <?php 
+        if (!empty($name) && !empty($email) && !empty($age)) {
+            if(strlen($name) > 3 && strpos($email, "@") && strpos($email, ".") && is_numeric($age)){
+                echo "<h3>Accesso Riuscito</h3>";
+            } else {
+                echo "<h3>Accesso Negato</h3>";
+            }
+        }
+        ?>
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
