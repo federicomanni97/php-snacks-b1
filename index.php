@@ -56,7 +56,7 @@ $email = $_GET['email'];
                 echo "<h5> {$games['scoreHome']} {$games['scoreAway']}</h5>";
             } ?>
         </div>
-
+        
         <div class="text-center m-5">
             <form action="index.php" method="GET">
                 <input type="text" name="name" placeholder="Name">
